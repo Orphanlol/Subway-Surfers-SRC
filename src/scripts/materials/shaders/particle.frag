@@ -1,0 +1,1 @@
+export default "precision lowp float;\n\n#ifdef COLOR\nuniform vec3 uColor;\n#endif\n\n#if defined( MAP )\nvarying vec2 vUv;\n#endif\n\n#ifdef MAP\nuniform sampler2D uMap;\n#endif\n\nvoid main() {\n    gl_FragColor = texture2D(uMap, vUv);\n    gl_FragColor.rgb *= uColor.rgb;\n}\n"
